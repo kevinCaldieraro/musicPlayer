@@ -12,6 +12,9 @@ let allMusics = [
     { mName: "Um Pedido", artist: "Hungria", img: "./assets/images/musicImages/umPedidoHungriaIMG.png", src: "./assets/audios/umPedidoHungriaMP3.mp3" }
 ];
 
+//Váriavel para controlar se a música está tocando ou não =======================
+let isPlaying = false;
+
 //Variável para manipular as músicas do array ===================================
 let musicIndex = 0;
 
@@ -64,6 +67,9 @@ btnNext.addEventListener("click", () => {
     renderMusic(musicIndex);
 });
 
+//Chamo a função renderMusic para, literalmente, renderizar a música ==================================
+renderMusic(musicIndex);
+
 //Criando as funções dos botões ========================================================
 function renderMusic(index) {
     music.setAttribute("src", allMusics[index].src)
@@ -72,7 +78,10 @@ function renderMusic(index) {
         musicName.innerHTML = allMusics[index].mName;
         musicArtist.innerHTML = allMusics[index].artist;
         musicDuration.innerHTML = secondsToMinutes(Math.floor(music.duration));
-        playMusic();
+
+        if(isPlaying == true) {
+            playMusic();
+        }
     });
 }
 
@@ -80,12 +89,14 @@ function playMusic() {
     music.play();
     btnPlay.style.display = "none";
     btnPause.style.display = "block";
+    isPlaying = true;
 }
 
 function pauseMusic() {
     music.pause();
     btnPause.style.display = "none";
     btnPlay.style.display = "block";
+    isPlaying = false;
 }
 
 //Função para atualizar a barra de progresso da música e passar automaticamente pra outra música qnd acabar ==============================
@@ -115,5 +126,4 @@ function secondsToMinutes(s) {
 
     return minutes + ":" + seconds;
 }
-
 }
