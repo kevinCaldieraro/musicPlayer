@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player</title>
+
+    <link rel="shortcut icon" href="./assets/images/iconPage.svg" type="image/x-icon">
+    <link rel="stylesheet" href="./style/style.css">
+</head>
+
+<body>
+
+    <main class="container">
+        <div class="top-container">
+            <span>Music Player</span>
+        </div>
+
+        <div class="img-area">
+            <img id="musicImg" src="./assets/images/musicImages/snowIMG.jpg">
+        </div>
+        <div class="song-details">
+            <p id="name">
+                Snow
+            </p>
+            <p id="artist">
+                Red Hot Chili Peppers
+            </p>
+        </div>
+
+        <div class="progress-area">
+            <div id="timeline">
+                <progress id="progressBar" value="0" max="1"></progress>
+            </div>
+
+            <div class="timer">
+                <span id="start">0:00</span><span id="end">0:00</span>
+            </div>
+        </div>
+
+        <div class="controls">
+            <img id="previous" src="./assets/images/btns/previousIOS.png">
+            <img id="play" src="./assets/images/btns/playIOS.png">
+            <img id="pause" src="./assets/images/btns/pauseIOS.png">
+            <img id="next" src="./assets/images/btns/nextIOS.png">
+        </div>
+    </main>
+    <audio id="music" src="./assets/audios/snowMP3.mp3"></audio>
+    <script src="./script/script.js"></script>
+</body>
+
+</html>
