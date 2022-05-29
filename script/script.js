@@ -1,3 +1,5 @@
+window.onload = () => {
+
 //Criando o array das músicas ================================
 let allMusics = [
 
@@ -26,9 +28,7 @@ let progressTime = document.getElementById("start");
 let musicDuration = document.getElementById("end");
 
 //Transformando os segundos da duração da música em minutos ==================================
-window.onload = function() {
-    musicDuration.innerHTML = secondsToMinutes(Math.floor(music.duration));
-}
+musicDuration.innerHTML = secondsToMinutes(Math.floor(music.duration));
 
 //Pegando a timeline da música e adicionando evento + função para fazer a interatividade =================================
 let timeline = document.getElementById("timeline");
@@ -114,4 +114,6 @@ function secondsToMinutes(s) {
     }
 
     return minutes + ":" + seconds;
+}
+
 }
